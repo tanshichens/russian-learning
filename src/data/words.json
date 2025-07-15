@@ -1,0 +1,69 @@
+{
+  "咖啡馆篇": {
+    "点单": [
+      { "word": "меню", "chinese": "菜单", "example": "Можно меню, пожалуйста?" },
+      { "word": "официант", "chinese": "服务员", "example": "Позовите официанта." }
+    ],
+    "结账": [
+      { "word": "счёт", "chinese": "账单", "example": "Принесите, пожалуйста, счёт." }
+    ],
+    "不限": [
+      {"word":"кофе","chinese":"咖啡","pos":"名词（阳性）","collocations":"чашка кофе","collocations_cn":"一杯咖啡","example":"Я пью кофе каждое утро.","example_cn":"我每天早上都喝咖啡。"},
+      {"word":"чай","chinese":"茶","pos":"名词（阳性）","collocations":"зелёный чай","collocations_cn":"绿茶","example":"Вы будете чай или кофе?","example_cn":"您要茶还是咖啡？"},
+      {"word":"капучино","chinese":"卡布奇诺","pos":"名词（阳性）","collocations":"горячий капучино","collocations_cn":"热卡布奇诺","example":"Я предпочитаю капучино без сахара.","example_cn":"我喜欢不加糖的卡布奇诺。"},
+      {"word":"латте","chinese":"拿铁","pos":"名词（阳性）","collocations":"латте с молоком","collocations_cn":"加牛奶的拿铁","example":"Она всегда берёт латте утром.","example_cn":"她早上总是点拿铁。"},
+      {"word":"эспрессо","chinese":"浓缩咖啡","pos":"名词（阳性）","collocations":"двойной эспрессо","collocations_cn":"双份浓缩咖啡","example":"Я закажу двойной эспрессо.","example_cn":"我要一杯双份浓缩咖啡。"},
+      {"word":"американо","chinese":"美式咖啡","pos":"名词（阳性）","collocations":"классический американо","collocations_cn":"经典美式咖啡","example":"Он пьёт американо без сахара.","example_cn":"他喝不加糖的美式咖啡。"},
+      {"word":"горячий шоколад","chinese":"热巧克力","pos":"名词（阳性）","collocations":"чашка горячего шоколада","collocations_cn":"一杯热巧克力","example":"Я люблю горячий шоколад зимой.","example_cn":"我冬天喜欢喝热巧克力。"},
+      {"word":"молоко","chinese":"牛奶","pos":"名词（中性）","collocations":"тёплое молоко","collocations_cn":"温牛奶","example":"Добавьте немного молока, пожалуйста.","example_cn":"请加一点牛奶。"},
+      {"word":"сахар","chinese":"糖","pos":"名词（阳性）","collocations":"добавить сахар","collocations_cn":"加糖","example":"Я не кладу сахар в кофе.","example_cn":"我不在咖啡里加糖。"},
+      {"word":"вода","chinese":"水","pos":"名词（阴性）","collocations":"бутылка воды","collocations_cn":"一瓶水","example":"Можно бутылку воды?","example_cn":"可以给我一瓶水吗？"},
+      {"word":"торт","chinese":"蛋糕","pos":"名词（阳性）","collocations":"шоколадный торт","collocations_cn":"巧克力蛋糕","example":"Мы заказали торт к чаю.","example_cn":"我们点了蛋糕配茶。"},
+      {"word":"пирог","chinese":"馅饼","pos":"名词（阳性）","collocations":"яблочный пирог","collocations_cn":"苹果派","example":"У них вкусный пирог.","example_cn":"他们的派很好吃。"},
+      {"word":"печенье","chinese":"饼干","pos":"名词（中性）","collocations":"свежее печенье","collocations_cn":"新鲜饼干","example":"Хочу печенье с чаем.","example_cn":"我想配茶吃饼干。"},
+      {"word":"бутерброд","chinese":"三明治","pos":"名词（阳性）","collocations":"горячий бутерброд","collocations_cn":"热三明治","example":"Я съел бутерброд на обед.","example_cn":"我午饭吃了三明治。"},
+      {"word":"сэндвич","chinese":"三明治","pos":"名词（阳性）","collocations":"сэндвич с курицей","collocations_cn":"鸡肉三明治","example":"Принесите сэндвич с курицей.","example_cn":"请拿一个鸡肉三明治来。"},
+      {"word":"суп","chinese":"汤","pos":"名词（阳性）","collocations":"томатный суп","collocations_cn":"番茄汤","example":"На обед был суп.","example_cn":"午餐是汤。"},
+      {"word":"салат","chinese":"沙拉","pos":"名词（阳性）","collocations":"свежий салат","collocations_cn":"新鲜沙拉","example":"Я люблю овощной салат.","example_cn":"我喜欢蔬菜沙拉。"},
+      {"word":"завтрак","chinese":"早餐","pos":"名词（阳性）","collocations":"континентальный завтрак","collocations_cn":"欧式早餐","example":"Мы подаём завтрак до 11.","example_cn":"我们早餐供应到11点。"},
+      {"word":"обед","chinese":"午餐","pos":"名词（阳性）","collocations":"заказать обед","collocations_cn":"点午餐","example":"Он заказал обед.","example_cn":"他点了午餐。"},
+      {"word":"ужин","chinese":"晚餐","pos":"名词（阳性）","collocations":"романтический ужин","collocations_cn":"浪漫晚餐","example":"Они пришли на ужин.","example_cn":"他们来吃晚饭。"},
+      {"word":"официант","chinese":"服务员","pos":"名词（阳性）","collocations":"позвать официанта","collocations_cn":"叫服务员","example":"Позовите официанта, пожалуйста.","example_cn":"请叫一下服务员。"},
+      {"word":"официантка","chinese":"女服务员","pos":"名词（阴性）","collocations":"улыбчивая официантка","collocations_cn":"微笑的女服务员","example":"Официантка принесла меню.","example_cn":"女服务员带来了菜单。"},
+      {"word":"бармен","chinese":"酒吧员","pos":"名词（阳性）","collocations":"дружелюбный бармен","collocations_cn":"友好的酒吧员","example":"Бармен посоветовал напиток.","example_cn":"酒吧员推荐了一种饮品。"},
+      {"word":"бариста","chinese":"咖啡师","pos":"名词（通性）","collocations":"опытный бариста","collocations_cn":"有经验的咖啡师","example":"Бариста приготовил латте.","example_cn":"咖啡师做了拿铁。"},
+      {"word":"заказать","chinese":"点餐","pos":"动词（完成体）","collocations":"заказать напиток","collocations_cn":"点饮料","example":"Мы заказали кофе и пирог.","example_cn":"我们点了咖啡和派。"},
+      {"word":"бронировать","chinese":"预订","pos":"动词（未完成体）","collocations":"бронировать столик","collocations_cn":"预订桌子","example":"Я хочу бронировать столик.","example_cn":"我想预订一个桌子。"},
+      {"word":"оплатить","chinese":"付款","pos":"动词（完成体）","collocations":"оплатить счёт","collocations_cn":"结账","example":"Мы оплатили счёт картой.","example_cn":"我们用卡付款了。"},
+      {"word":"ждать","chinese":"等待","pos":"动词（未完成体）","collocations":"ждать официанта","collocations_cn":"等服务员","example":"Мы ждали официанта 10 минут.","example_cn":"我们等了服务员10分钟。"},
+      {"word":"есть","chinese":"吃","pos":"动词（未完成体）","collocations":"есть торт","collocations_cn":"吃蛋糕","example":"Он ест пирог.","example_cn":"他在吃派。"},
+      {"word":"пить","chinese":"喝","pos":"动词（未完成体）","collocations":"пить чай","collocations_cn":"喝茶","example":"Я пью чай без сахара.","example_cn":"我喝不加糖的茶。"},
+      {"word":"меню","chinese":"菜单","pos":"名词（中性）","collocations":"посмотреть меню","collocations_cn":"查看菜单","example":"Можно меню, пожалуйста?","example_cn":"可以给我菜单吗？"},
+      {"word":"счёт","chinese":"账单","pos":"名词（阳性）","collocations":"попросить счёт","collocations_cn":"要账单","example":"Принесите счёт, пожалуйста.","example_cn":"请把账单拿来。"},
+      {"word":"стол","chinese":"桌子","pos":"名词（阳性）","collocations":"забронировать стол","collocations_cn":"预订桌子","example":"Мы сидим за столом.","example_cn":"我们坐在桌旁。"},
+      {"word":"стул","chinese":"椅子","pos":"名词（阳性）","collocations":"удобный стул","collocations_cn":"舒适的椅子","example":"На стуле лежала куртка.","example_cn":"椅子上放着外套。"},
+      {"word":"салфетка","chinese":"餐巾纸","pos":"名词（阴性）","collocations":"бумажная салфетка","collocations_cn":"纸巾","example":"Можно салфетку?","example_cn":"可以给我张餐巾纸吗？"},
+      {"word":"вилка","chinese":"叉子","pos":"名词（阴性）","collocations":"столовая вилка","collocations_cn":"餐叉","example":"У меня нет вилки.","example_cn":"我没有叉子。"},
+      {"word":"ложка","chinese":"勺子","pos":"名词（阴性）","collocations":"чайная ложка","collocations_cn":"茶匙","example":"Нужна ложка для супа.","example_cn":"汤要用勺子。"},
+      {"word":"нож","chinese":"刀","pos":"名词（阳性）","collocations":"острый нож","collocations_cn":"锋利的刀","example":"Можно нож, пожалуйста?","example_cn":"请给我一把刀。"},
+      {"word":"поднос","chinese":"托盘","pos":"名词（阳性）","collocations":"поставить на поднос","collocations_cn":"放在托盘上","example":"Бариста подал кофе на подносе.","example_cn":"咖啡师用托盘端来咖啡。"},
+      {"word":"заведение","chinese":"场所、餐馆","pos":"名词（中性）","collocations":"уютное заведение","collocations_cn":"温馨的餐馆","example":"Это моё любимое заведение.","example_cn":"这是我最喜欢的店。"}
+    ]
+  },
+  "交通出行": {
+    "公交": [
+      { "word": "автобус", "chinese": "公交车", "example": "Я жду автобус." }
+    ],
+    "不限": [
+      { "word": "метро", "chinese": "地铁", "example": "Где находится метро?" }
+    ]
+  },
+  "餐厅饮食": {
+    "点菜": [
+      { "word": "блюдо", "chinese": "菜肴", "example": "Какое блюдо вы посоветуете?" }
+    ],
+    "不限": [
+      { "word": "ресторан", "chinese": "餐厅", "example": "Этот ресторан очень хороший." }
+    ]
+  }
+} 

@@ -1,0 +1,12 @@
+{
+  "accessKeyId": "your-access-key-id",
+  "secretAccessKey": "your-secret-access-key",
+  "server": "obs.cn-north-4.myhuaweicloud.com",
+  "bucket": "your-bucket-name",
+  "region": "cn-north-4",
+  "staticWebsiteHosting": {
+    "enabled": true,
+    "indexDocument": "index.html",
+    "errorDocument": "index.html"
+  }
+} 

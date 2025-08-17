@@ -743,3 +743,167 @@ footer p {
 .word-audio-btn svg {
   display: block;
 }
+
+/* 移动端响应式设计 */
+@media (max-width: 768px) {
+  /* 导航栏移动端适配 */
+  #navbar {
+    padding: 0.8rem 1rem;
+  }
+  
+  .logo {
+    font-size: 1.2rem;
+  }
+  
+  .nav-links {
+    gap: 1rem;
+  }
+  
+  .nav-links ul {
+    gap: 1rem;
+  }
+  
+  .nav-links a {
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  /* 主页移动端适配 */
+  .home-container {
+    padding: 1rem;
+  }
+  
+  .sections {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+  
+  .section {
+    padding: 1.5rem;
+    min-height: auto;
+  }
+  
+  .section h3 {
+    font-size: 1.3rem;
+  }
+  
+  .section p {
+    font-size: 0.9rem;
+  }
+  
+  .section-img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  /* 背景图片移动端适配 */
+  .background-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  /* 按钮移动端适配 */
+  .btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  /* 单词列表移动端适配 */
+  .words-container {
+    padding: 1rem;
+  }
+  
+  .word-item {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .word-ru.big {
+    font-size: 1.3rem;
+  }
+  
+  .word-zh {
+    font-size: 1.1rem;
+  }
+  
+  .word-audio-btn {
+    width: 28px;
+    height: 28px;
+    top: 8px;
+    right: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* 超小屏幕适配 */
+  .home-container {
+    padding: 0.5rem;
+  }
+  
+  .sections {
+    padding: 0.5rem;
+    gap: 1rem;
+  }
+  
+  .section {
+    padding: 1rem;
+  }
+  
+  .section h3 {
+    font-size: 1.2rem;
+  }
+  
+  .section p {
+    font-size: 0.85rem;
+  }
+  
+  .background-image {
+    height: 150px;
+  }
+  
+  .btn {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.85rem;
+  }
+  
+  /* 导航栏超小屏幕适配 */
+  #navbar {
+    padding: 0.6rem 0.8rem;
+  }
+  
+  .logo {
+    font-size: 1.1rem;
+  }
+  
+  .nav-links a {
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* 确保移动端触摸友好 */
+@media (hover: none) and (pointer: coarse) {
+  .btn, .nav-links a, .word-audio-btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .word-audio-btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* 横屏模式适配 */
+@media (max-width: 768px) and (orientation: landscape) {
+  .background-image {
+    height: 120px;
+  }
+  
+  .sections {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}

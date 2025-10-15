@@ -96,7 +96,7 @@ function uploadFile(filePath, objectKey) {
 function getContentType(filePath) {
   const ext = path.extname(filePath).toLowerCase();
   const mimeTypes = {
-    '.html': 'text/html',
+    '.html': 'text/html; charset=utf-8',
     '.css': 'text/css',
     '.js': 'application/javascript',
     '.json': 'application/json',
@@ -109,7 +109,10 @@ function getContentType(filePath) {
     '.woff': 'font/woff',
     '.woff2': 'font/woff2',
     '.ttf': 'font/ttf',
-    '.eot': 'application/vnd.ms-fontobject'
+    '.eot': 'application/vnd.ms-fontobject',
+    '.mp3': 'audio/mpeg',
+    '.mp4': 'video/mp4',
+    '.webm': 'video/webm'
   };
   return mimeTypes[ext] || 'application/octet-stream';
 }
@@ -128,9 +131,57 @@ async function uploadDirectory(dirPath, prefix = '') {
       const objectKey = prefix + file;
       try {
         await uploadFile(filePath, objectKey);
+        
+        // 为SPA路由创建额外的重定向文件
+        if (file === 'index.html') {
+          await createSPARedirectFiles();
+        }
       } catch (error) {
         console.error(`上传文件失败: ${objectKey}`, error.message);
       }
+    }
+  }
+}
+
+// 创建SPA路由重定向文件
+async function createSPARedirectFiles() {
+  const spaRoutes = ['words', 'listening', 'downloads'];
+  
+  for (const route of spaRoutes) {
+    try {
+      const redirectContent = `<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${route} - 柚子带你学俄语</title>
+  <script>
+    // 立即重定向到主页面，保持路由
+    window.location.replace('/index.html' + window.location.hash);
+  </script>
+</head>
+<body>
+  <p>正在跳转...</p>
+</body>
+</html>`;
+      
+      const filePath = path.join(__dirname, 'temp', `${route}.html`);
+      
+      // 确保临时目录存在
+      const tempDir = path.dirname(filePath);
+      if (!fs.existsSync(tempDir)) {
+        fs.mkdirSync(tempDir, { recursive: true });
+      }
+      
+      fs.writeFileSync(filePath, redirectContent);
+      await uploadFile(filePath, `${route}.html`);
+      
+      // 清理临时文件
+      fs.unlinkSync(filePath);
+      
+      console.log(`✅ 创建SPA重定向: /${route}`);
+    } catch (error) {
+      console.error(`创建SPA重定向失败: ${route}`, error.message);
     }
   }
 }

@@ -89,8 +89,8 @@ const Navbar: React.FC = () => {
   };
 
   // 处理登出
-  const handleLogout = () => {
-    logout();
+  const handleLogout = async () => {
+    await logout();
     setShowUserMenu(false);
     navigate('/');
   };

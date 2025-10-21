@@ -5,19 +5,128 @@
 [build.environment]
   NODE_VERSION = "18"
 
-# SPA路由重定向 - 确保所有路由都指向index.html
+# Netlify Functions 配置
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# API 路由重定向到 Netlify Functions
+[[redirects]]
+  from = "/api/users"
+  to = "/.netlify/functions/users-get"
+  status = 200
+  force = true
+  conditions = {Method = ["GET"]}
+
+[[redirects]]
+  from = "/api/users"
+  to = "/.netlify/functions/users-create"
+  status = 200
+  force = true
+  conditions = {Method = ["POST"]}
+
+[[redirects]]
+  from = "/api/users/:username"
+  to = "/.netlify/functions/users-update"
+  status = 200
+  force = true
+  conditions = {Method = ["PUT"]}
+
+[[redirects]]
+  from = "/api/users/:username"
+  to = "/.netlify/functions/users-delete"
+  status = 200
+  force = true
+  conditions = {Method = ["DELETE"]}
+
+[[redirects]]
+  from = "/api/auth/validate"
+  to = "/.netlify/functions/auth-validate"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/registration-requests"
+  to = "/.netlify/functions/registration-get"
+  status = 200
+  force = true
+  conditions = {Method = ["GET"]}
+
+[[redirects]]
+  from = "/api/registration-requests"
+  to = "/.netlify/functions/registration-create"
+  status = 200
+  force = true
+  conditions = {Method = ["POST"]}
+
+[[redirects]]
+  from = "/api/registration-requests/:id/approve"
+  to = "/.netlify/functions/registration-approve"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/registration-requests/:id/reject"
+  to = "/.netlify/functions/registration-reject"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/registration-requests/:id"
+  to = "/.netlify/functions/registration-delete"
+  status = 200
+  force = true
+  conditions = {Method = ["DELETE"]}
+
+[[redirects]]
+  from = "/api/devices/login"
+  to = "/.netlify/functions/devices-login"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/devices/logout"
+  to = "/.netlify/functions/devices-logout"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/devices/kick"
+  to = "/.netlify/functions/devices-kick"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/devices/:username"
+  to = "/.netlify/functions/devices-get"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/health"
+  to = "/.netlify/functions/health"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/db-status"
+  to = "/.netlify/functions/db-status"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/init-admin"
+  to = "/.netlify/functions/init-admin"
+  status = 200
+  force = true
+
+# SPA路由重定向 - 确保所有其他路由都指向index.html
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 
-# API路由重定向（如果有的话）
-[[redirects]]
-  from = "/api/*"
-  to = "https://your-api-domain.com/:splat"
-  status = 200
-  force = true
-
+# 安全头部
 [[headers]]
   for = "/*"
   [headers.values]
@@ -29,4 +138,12 @@
 [[headers]]
   for = "/assets/*"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable" 
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# API CORS 头部
+[[headers]]
+  for = "/api/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Headers = "Content-Type"
+    Access-Control-Allow-Methods = "GET, POST, PUT, DELETE, OPTIONS" 

@@ -120,11 +120,12 @@
   status = 200
   force = true
 
-# SPA路由重定向 - 确保所有其他路由都指向index.html
+# SPA路由重定向 - 确保所有其他路由都指向index.html（排除API路由）
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+  conditions = {Path = ["!/api/*"]}
 
 # 安全头部
 [[headers]]

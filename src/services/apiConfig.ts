@@ -24,7 +24,7 @@ export const getApiBaseUrl = (): string => {
   }
   
   // 生产环境（Netlify Functions）
-  return '/api';
+  return 'https://storied-dragon-acce51.netlify.app/.netlify/functions';
 };
 
 export const API_BASE_URL = getApiBaseUrl();

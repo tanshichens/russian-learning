@@ -48,7 +48,7 @@ export const userAPI = {
   
   // 验证凭证
   validateCredentials: (username: string, password: string) => 
-    request('/auth/validate', {
+    request('/auth-validate', {
       method: 'POST',
       body: JSON.stringify({ username, password }),
     }),
@@ -58,31 +58,32 @@ export const userAPI = {
 
 export const registrationAPI = {
   // 获取所有申请
-  getAll: () => request('/registration-requests'),
+  getAll: () => request('/registration-get'),
   
   // 提交申请
-  submit: (data: any) => request('/registration-requests', {
+  submit: (data: any) => request('/registration-create', {
     method: 'POST',
     body: JSON.stringify(data),
   }),
   
   // 批准申请
   approve: (id: string, adminUsername: string) => 
-    request(`/registration-requests/${id}/approve`, {
+    request(`/registration-approve`, {
       method: 'POST',
-      body: JSON.stringify({ adminUsername }),
+      body: JSON.stringify({ id, adminUsername }),
     }),
   
   // 拒绝申请
   reject: (id: string, adminUsername: string, reason?: string) => 
-    request(`/registration-requests/${id}/reject`, {
+    request(`/registration-reject`, {
       method: 'POST',
-      body: JSON.stringify({ adminUsername, reason }),
+      body: JSON.stringify({ id, adminUsername, reason }),
     }),
   
   // 删除申请
-  delete: (id: string) => request(`/registration-requests/${id}`, {
-    method: 'DELETE',
+  delete: (id: string) => request(`/registration-delete`, {
+    method: 'POST',
+    body: JSON.stringify({ id }),
   }),
 };
 

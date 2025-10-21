@@ -23,8 +23,8 @@ export const getApiBaseUrl = (): string => {
     return 'http://localhost:3001/api';
   }
   
-  // 生产环境（需要配置真实的API地址）
-  return 'https://api.your-domain.com/api';
+  // 生产环境（Netlify Functions）
+  return '/api';
 };
 
 export const API_BASE_URL = getApiBaseUrl();

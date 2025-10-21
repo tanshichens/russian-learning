@@ -27,23 +27,24 @@ const request = async (endpoint: string, options: RequestInit = {}) => {
 
 export const userAPI = {
   // 获取所有用户
-  getAll: () => request('/users'),
+  getAll: () => request('/users-get'),
   
   // 添加用户
-  add: (user: any) => request('/users', {
+  add: (user: any) => request('/users-create', {
     method: 'POST',
     body: JSON.stringify(user),
   }),
   
   // 更新用户
-  update: (username: string, data: any) => request(`/users/${username}`, {
-    method: 'PUT',
-    body: JSON.stringify(data),
+  update: (username: string, data: any) => request(`/users-update`, {
+    method: 'POST',
+    body: JSON.stringify({ username, ...data }),
   }),
   
   // 删除用户
-  delete: (username: string) => request(`/users/${username}`, {
-    method: 'DELETE',
+  delete: (username: string) => request(`/users-delete`, {
+    method: 'POST',
+    body: JSON.stringify({ username }),
   }),
   
   // 验证凭证

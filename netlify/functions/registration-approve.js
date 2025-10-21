@@ -22,12 +22,8 @@ export async function handler(event) {
     // 连接数据库
     await connectDB();
 
-    // 从路径中获取申请ID
-    const pathParts = event.path.split('/');
-    const id = pathParts[pathParts.length - 2]; // /api/registration-requests/:id/approve
-
     // 解析请求体
-    const { adminUsername } = JSON.parse(event.body || '{}');
+    const { id, adminUsername } = JSON.parse(event.body || '{}');
 
     // 查找申请
     const request = await RegistrationRequest.findById(id);

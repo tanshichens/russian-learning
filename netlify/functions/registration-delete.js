@@ -22,8 +22,8 @@ export async function handler(event) {
     // 连接数据库
     await connectDB();
 
-    // 从路径中获取申请ID
-    const id = event.path.split('/').pop();
+    // 解析请求体
+    const { id } = JSON.parse(event.body || '{}');
 
     // 查找申请
     const request = await RegistrationRequest.findById(id);

@@ -11,6 +11,7 @@
   node_bundler = "esbuild"
 
 # API 路由重定向到 Netlify Functions
+# 用户管理 API
 [[redirects]]
   from = "/api/users"
   to = "/.netlify/functions/users-get"
@@ -39,6 +40,7 @@
   force = true
   conditions = {Method = ["DELETE"]}
 
+# 认证 API
 [[redirects]]
   from = "/api/auth/validate"
   to = "/.netlify/functions/auth-validate"
@@ -46,6 +48,7 @@
   force = true
   conditions = {Method = ["POST"]}
 
+# 注册申请 API
 [[redirects]]
   from = "/api/registration-requests"
   to = "/.netlify/functions/registration-get"
@@ -65,12 +68,14 @@
   to = "/.netlify/functions/registration-approve"
   status = 200
   force = true
+  conditions = {Method = ["POST"]}
 
 [[redirects]]
   from = "/api/registration-requests/:id/reject"
   to = "/.netlify/functions/registration-reject"
   status = 200
   force = true
+  conditions = {Method = ["POST"]}
 
 [[redirects]]
   from = "/api/registration-requests/:id"
@@ -79,47 +84,56 @@
   force = true
   conditions = {Method = ["DELETE"]}
 
+# 设备管理 API
 [[redirects]]
   from = "/api/devices/login"
   to = "/.netlify/functions/devices-login"
   status = 200
   force = true
+  conditions = {Method = ["POST"]}
 
 [[redirects]]
   from = "/api/devices/logout"
   to = "/.netlify/functions/devices-logout"
   status = 200
   force = true
+  conditions = {Method = ["POST"]}
 
 [[redirects]]
   from = "/api/devices/kick"
   to = "/.netlify/functions/devices-kick"
   status = 200
   force = true
+  conditions = {Method = ["POST"]}
 
 [[redirects]]
   from = "/api/devices/:username"
   to = "/.netlify/functions/devices-get"
   status = 200
   force = true
+  conditions = {Method = ["GET"]}
 
+# 系统 API
 [[redirects]]
   from = "/api/health"
   to = "/.netlify/functions/health"
   status = 200
   force = true
+  conditions = {Method = ["GET"]}
 
 [[redirects]]
   from = "/api/db-status"
   to = "/.netlify/functions/db-status"
   status = 200
   force = true
+  conditions = {Method = ["GET"]}
 
 [[redirects]]
   from = "/api/init-admin"
   to = "/.netlify/functions/init-admin"
   status = 200
   force = true
+  conditions = {Method = ["POST"]}
 
 # SPA路由重定向 - 确保所有其他路由都指向index.html（排除API路由）
 [[redirects]]
@@ -148,4 +162,4 @@
   [headers.values]
     Access-Control-Allow-Origin = "*"
     Access-Control-Allow-Headers = "Content-Type"
-    Access-Control-Allow-Methods = "GET, POST, PUT, DELETE, OPTIONS" 
+    Access-Control-Allow-Methods = "GET, POST, PUT, DELETE, OPTIONS"
